@@ -614,6 +614,43 @@
             text-shadow: 0 5px 15px rgba(255, 107, 157, 0.5);
         }
         
+        .footer {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 157, 0.1),
+                rgba(78, 205, 196, 0.1)
+            );
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 80px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--content-border);
+        }
+        
+        .footer-content p {
+            color: var(--text-color-secondary);
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .footer-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-content a:hover {
+            color: var(--accent-secondary);
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+        }
+        
         @media (max-width: 768px) {
             .header {
                 margin-top: 200px;
@@ -690,6 +727,19 @@
             .quote::after {
                 bottom: -20px;
                 right: -20px;
+            }
+            
+            .footer {
+                padding: 20px 0;
+                margin-top: 60px;
+            }
+            
+            .footer-content {
+                padding: 0 var(--mobile-border);
+            }
+            
+            .footer-content p {
+                font-size: 12px;
             }
         }
         
@@ -811,10 +861,16 @@
         <section class="section fade-in">
             <h2 class="section-title">LET'S CONNECT</h2>
             <div class="connect-info">
-                <a href="mailto:Info@TwinNoteMusic.com" class="contact-email">Info@TwinNoteMusic.com</a>
+                <a href="https://twinnotemusic.com" class="contact-email">Visit TwinNoteMusic.com</a>
             </div>
         </section>
     </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Savii Nova. Powered by <a href="https://twinnotemusic.com" target="_blank" rel="noopener noreferrer">TwinNoteMusic.com</a></p>
+        </div>
+    </footer>
     <script>
         const observerOptions = {
             threshold: 0.1,
