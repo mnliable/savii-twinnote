@@ -661,6 +661,14 @@
             text-shadow: 0 0 8px rgba(255, 224, 102, 0.6);
         }
         
+        .copyright {
+            color: #ffe066;
+            font-size: 12px;
+            margin-top: 15px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
         @media (max-width: 768px) {
             .header {
                 margin-top: 200px;
@@ -902,6 +910,7 @@
             </div>
             <div class="footer-column">
                 <h3 class="footer-heading">TWIN NOTE MUSIC PRODUCTIONS</h3>
+                <p class="copyright">&copy; <span id="currentYear">2025</span> Savii Nova. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1072,6 +1081,14 @@
                 case 'ArrowLeft':
                     prevPhoto();
                     break;
+            }
+        });
+        
+        // Update copyright year dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentYearElement = document.getElementById('currentYear');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
             }
         });
     </script>
