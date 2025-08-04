@@ -615,40 +615,50 @@
         }
         
         .footer {
-            background: linear-gradient(135deg, 
-                rgba(255, 107, 157, 0.1),
-                rgba(78, 205, 196, 0.1)
-            );
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px 0;
+            background: #0a0a0a;
+            border-top: 2px solid #ffe066;
+            padding: 40px 0;
             margin-top: 80px;
-            text-align: center;
         }
         
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--content-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
         }
         
-        .footer-content p {
-            color: var(--text-color-secondary);
+        .footer-column {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .footer-heading {
+            color: #ffe066;
+            font-family: var(--heading-font);
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        .footer-column a {
+            color: #ffe066;
+            text-decoration: underline;
             font-size: 14px;
-            margin: 0;
-            line-height: 1.6;
-        }
-        
-        .footer-content a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 8px;
             transition: all 0.3s ease;
         }
         
-        .footer-content a:hover {
-            color: var(--accent-secondary);
-            text-shadow: 0 0 10px rgba(78, 205, 196, 0.5);
+        .footer-column a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(255, 224, 102, 0.6);
         }
         
         @media (max-width: 768px) {
@@ -730,16 +740,29 @@
             }
             
             .footer {
-                padding: 20px 0;
+                padding: 30px 0;
                 margin-top: 60px;
             }
             
             .footer-content {
                 padding: 0 var(--mobile-border);
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
             }
             
-            .footer-content p {
+            .footer-column {
+                text-align: center;
+            }
+            
+            .footer-heading {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .footer-column a {
                 font-size: 12px;
+                margin-bottom: 6px;
             }
         }
         
@@ -868,7 +891,18 @@
     
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2024 Savii Nova. Powered by <a href="https://twinnotemusic.com" target="_blank" rel="noopener noreferrer">TwinNoteMusic.com</a></p>
+            <div class="footer-column">
+                <h3 class="footer-heading">SUPPORT</h3>
+                <a href="https://twinnotemusic.com/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                <a href="https://twinnotemusic.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">CONTACT</h3>
+                <a href="https://twinnotemusic.com/" target="_blank" rel="noopener noreferrer">info@twinnotemusic.com</a>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">TWIN NOTE MUSIC PRODUCTIONS</h3>
+            </div>
         </div>
     </footer>
     <script>
