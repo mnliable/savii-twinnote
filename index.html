@@ -695,6 +695,8 @@
             .music-player {
                 flex-direction: column;
                 text-align: center;
+                gap: 20px;
+                padding: 25px;
             }
             
             .album-cover {
@@ -704,7 +706,62 @@
             
             .audio-player {
                 max-width: 250px;
-                height: 35px;
+                height: 40px;
+                border-radius: 20px;
+            }
+            
+            .audio-player::-webkit-media-controls-panel {
+                background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
+                border-radius: 20px;
+                padding: 5px;
+            }
+            
+            .audio-player::-webkit-media-controls-play-button {
+                background-color: rgba(255, 255, 255, 0.9);
+                border-radius: 50%;
+                color: var(--accent-color);
+                width: 24px;
+                height: 24px;
+                margin: 0 5px;
+            }
+            
+            .audio-player::-webkit-media-controls-current-time-display,
+            .audio-player::-webkit-media-controls-time-remaining-display {
+                color: white;
+                font-weight: 600;
+                font-size: 12px;
+            }
+            
+            .audio-player::-webkit-media-controls-timeline {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 8px;
+                height: 4px;
+            }
+            
+            .audio-player::-webkit-media-controls-volume-slider {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 8px;
+                height: 4px;
+            }
+            
+            /* Additional mobile audio player improvements */
+            .audio-player::-webkit-media-controls {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+            
+            .audio-player::-webkit-media-controls-enclosure {
+                background: transparent;
+                border-radius: 20px;
+            }
+            
+            /* Ensure touch targets are large enough for mobile */
+            .audio-player::-webkit-media-controls-play-button,
+            .audio-player::-webkit-media-controls-mute-button {
+                min-width: 28px;
+                min-height: 28px;
             }
             
             .lightbox-nav {
