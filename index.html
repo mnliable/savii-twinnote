@@ -20,6 +20,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Dancing+Script:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Preload critical images -->
+    <link rel="preload" href="https://i.imgur.com/yjF9Kuq.jpg" as="image" type="image/jpeg">
+    <link rel="preload" href="https://i.imgur.com/cKJXQPL.jpeg" as="image" type="image/jpeg">
+    <!-- Preconnect to external image domains -->
+    <link rel="preconnect" href="https://i.imgur.com">
     <style>
         :root {
             --page-background-color: #0a0a0a;
@@ -77,6 +82,8 @@
             background-attachment: fixed;
             background-repeat: no-repeat;
             filter: brightness(0.4) contrast(1.1) saturate(1.0);
+            will-change: transform;
+            transform: translateZ(0);
         }
         
         @media (max-width: 768px) {
@@ -321,9 +328,11 @@
             height: 300px;
             object-fit: cover;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            will-change: transform;
+            transform: translateZ(0);
         }
         
         .album-cover:hover {
@@ -713,16 +722,23 @@
             .audio-player::-webkit-media-controls-panel {
                 background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary));
                 border-radius: 20px;
-                padding: 5px;
+                padding: 3px 8px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
             }
             
             .audio-player::-webkit-media-controls-play-button {
                 background-color: rgba(255, 255, 255, 0.9);
                 border-radius: 50%;
                 color: var(--accent-color);
-                width: 24px;
-                height: 24px;
-                margin: 0 5px;
+                width: 28px;
+                height: 28px;
+                margin: 2px 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
             }
             
             .audio-player::-webkit-media-controls-current-time-display,
@@ -882,33 +898,33 @@
         <section class="section fade-in">
             <h2 class="section-title">MUSIC</h2>
             <div class="music-player">
-                <img src="https://i.imgur.com/cKJXQPL.jpeg" alt="Hard Shot" class="album-cover">
+                <img src="https://i.imgur.com/cKJXQPL.jpeg" alt="Hard Shot" class="album-cover" loading="eager" decoding="async" width="300" height="300">
                 <div class="album-info">
                     <h3 class="album-title">Hard Shot</h3>
                     <p class="artist-name">Savii Nova</p>
-                    <audio controls class="audio-player">
+                    <audio controls class="audio-player" preload="none">
                         <source src="songs/SAVII NOVA - HARD SHOT.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
             </div>
             <div class="music-player">
-                <img src="https://i.imgur.com/qBFuQDJ.jpeg" alt="Iconic" class="album-cover">
+                <img src="https://i.imgur.com/qBFuQDJ.jpeg" alt="Iconic" class="album-cover" loading="lazy" decoding="async" width="300" height="300">
                 <div class="album-info">
                     <h3 class="album-title">Iconic</h3>
                     <p class="artist-name">Savii Nova</p>
-                    <audio controls class="audio-player">
+                    <audio controls class="audio-player" preload="none">
                         <source src="songs/SAVII NOVA - ICONIC.wav" type="audio/wav">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
             </div>
             <div class="music-player">
-                <img src="https://i.imgur.com/eTMTIYq.jpeg" alt="Desire" class="album-cover">
+                <img src="https://i.imgur.com/eTMTIYq.jpeg" alt="Desire" class="album-cover" loading="lazy" decoding="async" width="300" height="300">
                 <div class="album-info">
                     <h3 class="album-title">Desire</h3>
                     <p class="artist-name">Savii Nova</p>
-                    <audio controls class="audio-player">
+                    <audio controls class="audio-player" preload="none">
                         <source src="songs/SAVII NOVA- DESIRE.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
@@ -919,13 +935,13 @@
             <h2 class="section-title">PRESS PHOTOS</h2>
             <div class="photo-gallery">
                 <div class="photo-item" data-index="0">
-                    <img src="Press photos/Spress1.jpg" alt="Savii Nova Press Photo 1">
+                    <img src="Press photos/Spress1.jpg" alt="Savii Nova Press Photo 1" loading="lazy" decoding="async" width="350" height="350">
                 </div>
                 <div class="photo-item" data-index="1">
-                    <img src="Press photos/Spress2.jpg" alt="Savii Nova Press Photo 2">
+                    <img src="Press photos/Spress2.jpg" alt="Savii Nova Press Photo 2" loading="lazy" decoding="async" width="350" height="350">
                 </div>
                 <div class="photo-item" data-index="2">
-                    <img src="Press photos/Spress3.jpg" alt="Savii Nova Press Photo 3">
+                    <img src="Press photos/Spress3.jpg" alt="Savii Nova Press Photo 3" loading="lazy" decoding="async" width="350" height="350">
                 </div>
             </div>
         </section>
@@ -949,7 +965,7 @@
         <section class="section fade-in">
             <h2 class="section-title">LET'S CONNECT</h2>
             <div class="connect-info">
-                <a href="https://twinnotemusic.com" class="contact-email">Visit TwinNoteMusic.com</a>
+                <a href="mailto:info@twinnotemusic.com" class="contact-email">info@twinnotemusic.com</a>
             </div>
         </section>
     </div>
@@ -963,10 +979,11 @@
             </div>
             <div class="footer-column">
                 <h3 class="footer-heading">CONTACT</h3>
-                <a href="https://twinnotemusic.com/" target="_blank" rel="noopener noreferrer">info@twinnotemusic.com</a>
+                <a href="mailto:info@twinnotemusic.com">info@twinnotemusic.com</a>
             </div>
             <div class="footer-column">
                 <h3 class="footer-heading">TWIN NOTE MUSIC PRODUCTIONS</h3>
+                <a href="https://www.twinnotemusic.com" target="_blank" rel="noopener noreferrer">Visit TwinNoteMusic.com</a>
                 <p class="copyright">&copy; <span id="currentYear">2025</span> Savii Nova. All rights reserved.</p>
             </div>
         </div>
